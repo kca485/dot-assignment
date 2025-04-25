@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { createTask } from "./actions";
+import { completeTask, createTask, deleteTask } from "./actions";
 import { H1, Ul } from "@/components/ui/typography";
 
 export default async function Page() {
@@ -26,7 +26,23 @@ export default async function Page() {
         <Input id="new-task" name="new-task" required />
         <Button formAction={createTask}>Submit</Button>
       </form>
-      <Ul>{data?.map((task) => <li key={task.id}>{task.title}</li>)}</Ul>
+      <ul>
+        {data?.map((task) => (
+          <li key={task.id} className="flex">
+            {!task.is_completed && (
+              <form>
+                <input type="hidden" name="id" value={task.id} />
+                <Button formAction={completeTask}>Done</Button>
+              </form>
+            )}
+            <span className="flex-grow">{task.title}</span>
+            <form>
+              <input type="hidden" name="id" value={task.id} />
+              <Button formAction={deleteTask}>Delete</Button>
+            </form>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
