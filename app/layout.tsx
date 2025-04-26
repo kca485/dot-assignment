@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 import { logout } from "./logout/actions";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,10 @@ export default async function RootLayout({
                 <Link href="/">Home</Link>
               </li>
               <li className="p-2">
-                <Link href="task">Task</Link>
+                <Link href="/task">Task</Link>
+              </li>
+              <li className="p-2">
+                <Link href="/shop">Shop</Link>
               </li>
               {!data?.user && (
                 <div className="flex-grow flex gap-x-4 justify-end">
@@ -59,6 +63,7 @@ export default async function RootLayout({
           )}
         </header>
         <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

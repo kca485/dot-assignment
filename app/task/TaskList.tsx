@@ -13,19 +13,23 @@ interface TaskListProps extends Tasks {}
 
 export async function TaskList({ data }: TaskListProps) {
   return (
-    <ul>
+    <ul className="space-y-4">
       {data?.map((task) => (
-        <li key={task.id} className="flex">
+        <li key={task.id} className="flex gap-x-2 border-b">
           {!task.is_completed && (
             <form>
               <input type="hidden" name="id" value={task.id} />
-              <Button formAction={completeTask}>Done</Button>
+              <Button variant="outline" formAction={completeTask}>
+                Done
+              </Button>
             </form>
           )}
-          <span className="flex-grow">{task.title}</span>
+          <span className="flex-grow flex items-center">{task.title}</span>
           <form>
             <input type="hidden" name="id" value={task.id} />
-            <Button formAction={deleteTask}>Delete</Button>
+            <Button variant="destructive" formAction={deleteTask}>
+              Delete
+            </Button>
           </form>
         </li>
       ))}

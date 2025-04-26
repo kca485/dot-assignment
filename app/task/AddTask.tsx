@@ -5,10 +5,12 @@ import { createTask } from "./actions";
 
 export async function AddTask() {
   return (
-    <form>
+    <form className="py-8">
       <Label htmlFor="new-task">Add New Task:</Label>
-      <Input id="new-task" name="new-task" required />
-      <Button formAction={createTask}>Submit</Button>
+      <div className="flex gap-x-2 mt-2">
+        <Input id="new-task" name="new-task" required />
+        <Button formAction={createTask}>Submit</Button>
+      </div>
     </form>
   );
 }
