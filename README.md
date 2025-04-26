@@ -31,3 +31,9 @@ cp .env.example .env
 ```bash
 npm run dev
 ```
+
+6. Lihat pada URL: http://localhost:3000
+
+## Demo
+
+Hasil bisa dilihat pada https://dot-assignment-murex.vercel.app/
