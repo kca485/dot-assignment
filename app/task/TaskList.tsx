@@ -9,9 +9,8 @@ export interface Task {
 export interface Tasks {
   data: Task[];
 }
-interface TaskListProps extends Tasks {}
 
-export async function TaskList({ data }: TaskListProps) {
+export async function TaskList({ data }: Tasks) {
   return (
     <ul className="space-y-4">
       {data?.map((task) => (

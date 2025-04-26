@@ -3,10 +3,7 @@
 import { useState } from "react";
 import { MinusIcon, PlusIcon, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
-import { H1 } from "@/components/ui/typography";
-import { formatPrice } from "@/lib/utils";
 import { useCart } from "../CartProvider";
 
 interface ProductDetaiProps {

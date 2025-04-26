@@ -35,7 +35,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     if (savedCart) {
       try {
         setItems(JSON.parse(savedCart));
-      } catch (e) {
+      } catch {
         console.error("Failed to parse cart from localStorage");
       }
     }
