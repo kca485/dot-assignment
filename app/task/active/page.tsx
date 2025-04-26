@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
-import { AddTask } from "../AddTask";
 import { TaskList } from "../TaskList";
 
 export default async function Page() {
@@ -16,9 +15,6 @@ export default async function Page() {
   }
 
   return (
-    <>
-      <AddTask />
       <TaskList data={data} />
-    </>
   );
 }

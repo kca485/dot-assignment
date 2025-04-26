@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { H1 } from "@/components/ui/typography";
 import Link from "next/link";
+import { AddTask } from "./AddTask";
 
 export default async function layout({
   children,
@@ -39,6 +40,7 @@ export default async function layout({
           </li>
         </ul>
       </nav>
+      <AddTask />
       {children}
     </div>
   );

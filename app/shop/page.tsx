@@ -22,7 +22,7 @@ export default async function Page() {
 
   return (
     <>
-      <H1>Shop</H1>
+      <H1 className="text-center">Shop</H1>
       <div className="p-8 flex gap-2">
         {data.map((product) => (
           <Link key={product.id} href={`/shop/${product.id}`}>
