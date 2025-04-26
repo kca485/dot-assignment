@@ -35,7 +35,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="flex">
+        <header className="flex border-b p-2 items-center">
           <nav className="flex-grow">
             <ul className="flex gap-x-4">
               <li className="p-2">
@@ -58,7 +58,9 @@ export default async function RootLayout({
           </nav>
           {data?.user && (
             <form>
-              <Button formAction={logout}>Logout</Button>
+              <Button variant="outline" formAction={logout}>
+                Logout
+              </Button>
             </form>
           )}
         </header>

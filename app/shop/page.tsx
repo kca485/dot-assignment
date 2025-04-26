@@ -23,7 +23,7 @@ export default async function Page() {
   return (
     <>
       <H1 className="text-center">Shop</H1>
-      <div className="p-8 flex gap-2">
+      <div className="p-8 flex flex-wrap gap-2">
         {data.map((product) => (
           <Link key={product.id} href={`/shop/${product.id}`}>
             <Card className="flex-grow max-w-3xs min-w-[200px]">
